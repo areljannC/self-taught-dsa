@@ -23,14 +23,24 @@ def a_plus_abs_b_v2(a, b):
 
 # Test Cases
 try:
-  assert a_plus_abs_b_v1(2, 3) == 5
-  assert a_plus_abs_b_v1(2, -3) == 5
-  assert a_plus_abs_b_v1(-1, 4) == 3
-  assert a_plus_abs_b_v1(-1, -4) == 3
-  assert a_plus_abs_b_v2(2, 3) == 5
-  assert a_plus_abs_b_v2(2, -3) == 5
-  assert a_plus_abs_b_v2(-1, 4) == 3
-  assert a_plus_abs_b_v2(-1, -4) == 3
+  result = a_plus_abs_b_v1(2, 3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v1(2, -3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v1(-1, 4)
+  assert result == 3, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v1(-1, -4)
+  assert result == 3, f"Expected 5 but got {result}"
+
+  result = a_plus_abs_b_v2(2, 3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v2(2, -3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v2(-1, 4)
+  assert result == 3, f"Expected 5 but got {result}"
+  result = a_plus_abs_b_v2(-1, -4)
+  assert result == 3, f"Expected 5 but got {result}"
+
   print("All test cases passed!")
 except AssertionError:
   print("A test case failed.")

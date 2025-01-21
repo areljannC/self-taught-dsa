@@ -22,14 +22,25 @@ def two_of_three_v2(i, j, k):
 
 # Test Cases
 try:
-  assert two_of_three_v1(1, 2, 3) == 5
-  assert two_of_three_v1(5, 3, 1) == 10
-  assert two_of_three_v1(10, 2, 8) == 68
-  assert two_of_three_v1(5, 5, 5) == 50
-  assert two_of_three_v2(1, 2, 3) == 5
-  assert two_of_three_v2(5, 3, 1) == 10
-  assert two_of_three_v2(10, 2, 8) == 68
-  assert two_of_three_v2(5, 5, 5) == 50
+  result = two_of_three_v1(1, 2, 3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = two_of_three_v1(5, 3, 1)
+  assert result == 10, f"Expected 10 but got {result}"
+  result = two_of_three_v1(10, 2, 8)
+  assert result == 68, f"Expected 68 but got {result}"
+  result = two_of_three_v1(5, 5, 5)
+  assert result == 50, f"Expected 50 but got {result}"
+
+  result = two_of_three_v2(1, 2, 3)
+  assert result == 5, f"Expected 5 but got {result}"
+  result = two_of_three_v2(5, 3, 1)
+  assert result == 10, f"Expected 10 but got {result}"
+  result = two_of_three_v2(10, 2, 8)
+  assert result == 68, f"Expected 68 but got {result}"
+  result = two_of_three_v2(5, 5, 5)
+  assert result == 50, f"Expected 50 but got {result}"
+
   print("All test cases passed!")
-except AssertionError:
+except AssertionError as error:
   print("A test case failed.")
+  print(error)
