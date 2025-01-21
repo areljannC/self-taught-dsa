@@ -11,13 +11,13 @@ from operator import pow
 # by adding all values and subtracting the max and min values to it
 # Time complexity: O(1)
 # Space complexity: O(1)
-def two_of_three_v1(i, j, k):
+def two_of_three_v1(i: int, j: int, k: int) -> int:
   return (pow(min(i, j, k), 2)) + (pow((i + j + k) - max(i, j, k) - min(i, j, k), 2))
 
 # Implementation: ChatGPT 4o
 # Time complexity: O(1)
 # Space complexity: O(1)
-def two_of_three_v2(i, j, k):
+def two_of_three_v2(i: int, j: int, k: int) -> int:
   return i**2 + j**2 + k**2 - max(i, j, k)**2
 
 # Test Cases

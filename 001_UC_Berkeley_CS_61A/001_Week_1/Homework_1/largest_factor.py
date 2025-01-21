@@ -9,7 +9,7 @@ which can be read as, "the remainder when dividing a by b is 0."
 # Implementation: intuition; iterate from 1 to n and check if remainder is 0
 # Time complexity: O(n)
 # Space complexity: O(1)
-def largest_factor_v1(n):
+def largest_factor_v1(n: int) -> int:
   lf = 1
   for i in range(1, n):
     f = n % i
@@ -19,13 +19,13 @@ def largest_factor_v1(n):
 # Implementation: ChatGPT 4o
 # Time complexity: O(n)
 # Space complexity: O(1)
-def largest_factor_v2(n):
+def largest_factor_v2(n: int) -> int:
   return max(b for b in range(1, n) if n % b == 0)
 
 # Implementation: v1 by ChatGPT 4o; start from n - 1 and stop the loop right away when n % i == 0 instead of starting from 0
 # Time complexity: O(n)
 # Space complexity: O(1)
-def largest_factor_v3(n):
+def largest_factor_v3(n: int) -> int:
   for i in range(n - 1, 0, -1):
     if n % i == 0: return i
 

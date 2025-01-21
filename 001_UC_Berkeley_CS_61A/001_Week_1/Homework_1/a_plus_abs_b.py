@@ -10,7 +10,7 @@ Without calling abs(), create a function that adds two numbers.
 # Implementation: intuition; multiply -1 to a negative number to make it a positive
 # Time complexity: O(1)
 # Space complexity: O(1)
-def a_plus_abs_b_v1(a, b):
+def a_plus_abs_b_v1(a: int, b: int) -> int:
   sum = a
   sum += b * -1 if b < 0 else b
   return sum
@@ -18,7 +18,7 @@ def a_plus_abs_b_v1(a, b):
 # Implementation: ChatGPT 4o
 # Time complexity: O(1)
 # Space complexity: O(1)
-def a_plus_abs_b_v2(a, b):
+def a_plus_abs_b_v2(a: int, b: int) -> int:
   return a + (b if b >= 0 else -b)
 
 # Test Cases
