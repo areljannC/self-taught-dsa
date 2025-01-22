@@ -8,14 +8,14 @@ When k is 0, the function should return 1.
 # intuition; problem mentions factorial which gives a hint that recursion is possible
 # time: O(k)
 # space: O(k)
-def falling_v1(n, k):
+def falling_v1(n: int, k: int) -> int:
     if k <= 0: return 1
     return n * falling_v1(n - 1, k - 1)
 
 # intuition; problem can be solved iteratively if there's a recursive solution
 # time: O(k)
 # space: O(1)
-def falling_v2(n, k):
+def falling_v2(n: int, k: int) -> int:
     result = 1
     for i in range(k): result = result * (n - i)
     return result
