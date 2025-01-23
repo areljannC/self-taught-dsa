@@ -8,7 +8,7 @@ By the end of going through these courses, one should be proficient in tackling 
 
 # Courses
 
-1. [UC Berkeley CS 61A](https://cs61a.org/)
+1. [UC Berkeley CS 61A](https://github.com/leejianping/cs61A-Spring2024)
 2. [UC Berkeley CS 61B](https://fa24.datastructur.es/)
 3. [Robert Sedgewick's Algorithms Part 1](https://www.coursera.org/learn/algorithms-part1)
 4. [Robert Sedgewick's Algorithms Part 2](https://www.coursera.org/learn/algorithms-part2)
