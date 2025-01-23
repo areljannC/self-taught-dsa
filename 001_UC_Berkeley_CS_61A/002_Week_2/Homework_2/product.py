@@ -15,7 +15,8 @@ identity = lambda x: x
 triple = lambda x: 3 * x
 increment = lambda x: x + 1
 
-# Implementation: intuition; not sure... this one seems pretty straightforward
+# Intuition: not sure... this one seems pretty straightforward
+# Implementation: iteration
 # Time complexity: O(n)
 # Space complexity: O(1)
 def product_v1(n: int, term: Callable[[int], int]) -> int:
@@ -23,13 +24,15 @@ def product_v1(n: int, term: Callable[[int], int]) -> int:
     for i in range(1, n + 1): product = mul(product, term(i))
     return product
 
-# Implementation: ChatGPT 4o
+# Intuition: ChatGPT 4o
+# Implementation: recursion
 # Time complexity: O(n)
 # Space complexity: O(1)
 def product_v2(n: int, term: Callable[[int], int]) -> int:
     if n == 0: return 1
     return term(n) * product_v1(n - 1, term)
 
+# Test cases
 try:
     result = product_v1(3, identity)
     assert result == 6, f"Expected 6 but got {result}"

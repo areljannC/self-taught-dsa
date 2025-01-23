@@ -2,7 +2,8 @@
 Write a function that takes in a number and determines if the digits contain two adjacent 8s.
 """
 
-# Implementation: intuition; use modulo and division to "pop" the right digit
+# Intuition: use modulo and division to "pop" the right digit
+# Implementation: iteration
 # Time complexity: O(n)
 # Space complexity: O(1)
 def double_eights_v1(n: int) -> bool:
@@ -14,7 +15,8 @@ def double_eights_v1(n: int) -> bool:
         n //= 10
     return False
 
-# Implementation: ChatGPT 4o
+# Intuition: ChatGPT 4o
+# Implementation: recursion
 # Time complexity: O(n)
 # Space complexity: O(n)
 def double_eights_v2(n: int) -> bool:
@@ -24,6 +26,7 @@ def double_eights_v2(n: int) -> bool:
         return True
     return double_eights_v2(n // 10)  # Recur with the number excluding the last digit
 
+# Test cases
 try:
     result = double_eights_v1(8)
     assert result == False, f"Expected False but got {result}"

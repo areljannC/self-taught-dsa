@@ -4,7 +4,8 @@ It prints all positive integers less than or equal to n that are divisible by k 
 Then, it returns how many numbers were printed.
 """
 
-# Implementation: intuition; start loop from k to n (inclusive) and increment by k
+# Intuition: start loop from k to n (inclusive) and increment by k
+# Implementation: iteration
 # Time complexity: O(n/k)
 # Space complexity: O(1)
 def divisible_by_k_v1(n: int, k: int) -> int:
@@ -15,13 +16,15 @@ def divisible_by_k_v1(n: int, k: int) -> int:
             print(i)
     return count
 
-# Implementation: intuition; if there's an iterative solution, there's a recursive solution
+# Intuition: if there's an iterative solution, there's a recursive solution
+# Implementation: recursion
 # Time complexity: O(n/k)
 # Space complexity: O(n/k)
 def divisible_by_k_v2(n: int, k: int) -> int:
     if n <= 0: return 0
     return (1 if n % k == 0 else 0) + divisible_by_k_v2(n - k, k)
 
+# Test cases
 try:
     result = divisible_by_k_v1(10, 2)
     assert result == 5, f"Expected 5 but got {result}"

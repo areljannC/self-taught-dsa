@@ -7,7 +7,7 @@ For example, 13 is prime, since it is only divisible by 1 and 13, but 14 is not,
 Use the % operator: x % y returns the remainder of x when divided by y.
 """
 
-# Implementation: intuition; use a for-loop until the half point of an odd number
+# Intuition: use a for-loop until the half point of an odd number
 # Time complexity: O(sqrt(n))
 # Space complexity: O(1)
 def is_prime_v1(n: int) -> bool:
@@ -19,7 +19,7 @@ def is_prime_v1(n: int) -> bool:
 
     return True
 
-# Implementation: ChatGPT 4o
+# Intuition: ChatGPT 4o
 # Time complexity: O(n/2)
 # Space complexity: O(1)
 def is_prime_v2(n: int) -> bool:
@@ -37,6 +37,7 @@ def is_prime_v2(n: int) -> bool:
 
     return True
 
+# Test cases
 try:
     result = is_prime_v1(2)
     assert result == True, f"Expected True but got {result}"

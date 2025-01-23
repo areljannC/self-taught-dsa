@@ -7,7 +7,7 @@ For example, add(2, 3) evalutes to 5, just like the expression 2 + 3.
 Without calling abs(), create a function that adds two numbers.
 """
 
-# Implementation: intuition; multiply -1 to a negative number to make it a positive
+# Intuition: multiply -1 to a negative number to make it a positive
 # Time complexity: O(1)
 # Space complexity: O(1)
 def a_plus_abs_b_v1(a: int, b: int) -> int:
@@ -15,13 +15,13 @@ def a_plus_abs_b_v1(a: int, b: int) -> int:
     sum += b * -1 if b < 0 else b
     return sum
 
-# Implementation: ChatGPT 4o
+# Intuition: ChatGPT 4o
 # Time complexity: O(1)
 # Space complexity: O(1)
 def a_plus_abs_b_v2(a: int, b: int) -> int:
     return a + (b if b >= 0 else -b)
 
-# Test Cases
+# Test cases
 try:
     result = a_plus_abs_b_v1(2, 3)
     assert result == 5, f"Expected 5 but got {result}"

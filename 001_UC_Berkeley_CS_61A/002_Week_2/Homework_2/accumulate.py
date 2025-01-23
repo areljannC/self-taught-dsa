@@ -20,7 +20,8 @@ identity = lambda x: x
 triple = lambda x: 3 * x
 increment = lambda x: x + 1
 
-# Implementation: intuition; gotta read the problem requirements carefully
+# Intuition: gotta read the problem requirements carefully
+# Implementation: iteration
 # Time complexity: O(n)
 # Space complexity: O(1)
 def accumulate_v1(fuse: Callable[[int, int], int], start: int, n: int, term: Callable[[int], int]) -> int:
@@ -28,7 +29,8 @@ def accumulate_v1(fuse: Callable[[int, int], int], start: int, n: int, term: Cal
     for i in range(1, n + 1): total = fuse(total, term(i))
     return total
 
-# Implementation: intuition; why not try recursion?
+# Intuition; why not try recursion?
+# Implementation: recursion
 # Time complexity: O(n)
 # Space complexity: O(n)
 def accumulate_v2(fuse: Callable[[int, int], int], start: int, n: int, term: Callable[[int], int]) -> int:
@@ -37,10 +39,10 @@ def accumulate_v2(fuse: Callable[[int, int], int], start: int, n: int, term: Cal
     if start == 0: return fuse(term(n), accumulate_v2(fuse, 0, n - 1, term))
     return fuse(start, fuse(term(n), accumulate_v2(fuse, 0, n - 1, term)))
 
-# Implementation: ChatGPT 4o; improvements for v2
+# Intuition: ChatGPT 4o; improvements for v2; instead of handling start, process it when n is 0
+# Implementation: recursion
 # Time complexity: O(n)
 # Space complexity: O(n)
-# Notes: instead of handling start, process it when n is 0; GENIUS!!!
 def accumulate_v3(fuse: Callable[[int, int], int], start: int, n: int, term: Callable[[int], int]) -> int:
     if n <= 0: return start
     return fuse(term(n), accumulate_v3(fuse, start, n - 1, term))
@@ -55,6 +57,7 @@ def summation_using_accumulate(n: int, term: Callable[[int], int]) -> int:
 def product_using_accumulate(n: int, term: Callable[[int], int]) -> int:
     return accumulate_v1(mul, 1, n, term)
 
+# Test cases
 try:
     result = accumulate_v1(add, 0, 5, identity)
     assert result == 15, f"Expected 15 but got {result}"

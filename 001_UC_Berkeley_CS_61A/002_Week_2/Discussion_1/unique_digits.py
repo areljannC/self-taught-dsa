@@ -2,7 +2,8 @@
 Write a function that returns the number of unique digits in a positive integer.
 """
 
-# Implementation: intuition; use an array to count digits
+# Intuition: count the occurrence of the digits
+# Implementation: use an array as a counter
 # Time complexity: O(n)
 # Space complexity: O(1)
 def unique_digits_v1(n: int) -> int:
@@ -17,7 +18,8 @@ def unique_digits_v1(n: int) -> int:
 
     return unique
 
-# Implementation: ChatGPT 4o; use a set
+# Intuition: ChatGPT 4o
+# Implementation: use a set
 # Time complexity: O(n)
 # Space complexity: O(1)
 def unique_digits_v2(n: int) -> int:
@@ -27,6 +29,7 @@ def unique_digits_v2(n: int) -> int:
         n //= 10           # Remove the last digit
     return len(unique)     # Return the number of unique digits
 
+# Test cases
 try:
     result = unique_digits_v1(8675309)
     assert result == 7, f"Expected 7 but got {result}"

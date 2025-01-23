@@ -30,6 +30,7 @@ def make_repeater_v1(term: Callable[[int], int], n: int) -> Callable[[int], int]
 def make_repeater_v2(term: Callable[[int], int], n: int) -> Callable[[int], int]:
     return lambda term, n: lambda x: reduce(lambda acc, _: term(acc), range(n), x)
 
+# Test cases
 try:
     result = make_repeater_v1(increment, 3)(5)
     assert result == 8, f"Expected 8 but got {result}"

@@ -16,7 +16,7 @@ prints out the hailstone sequence starting at n,
 and returns the number of steps in the sequence.
 """
 
-# Implementation: intuition; very similar to FizzBuzz
+# Intuition: very similar to FizzBuzz
 # Time complexity: O(n)
 # Space complexity: O(1)
 def hailstone_v1(n: int) -> int:
@@ -28,7 +28,7 @@ def hailstone_v1(n: int) -> int:
         steps += 1
     return steps
 
-# Implementation: ChatGPT 4o
+# Intuition: ChatGPT 4o
 # Time complexity: O(n)
 # Space complexity: O(1)
 def hailstone_v2(n: int) -> int:
@@ -40,6 +40,8 @@ def hailstone_v2(n: int) -> int:
             n = 3 * n + 1
         steps += 1
     return steps
+
+# Test cases
 try:
     result = hailstone_v1(10)
     assert result == 7, f"Expected 7 but got {result}"

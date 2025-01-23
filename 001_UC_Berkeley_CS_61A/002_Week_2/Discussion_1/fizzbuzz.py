@@ -8,7 +8,7 @@ For each i:
 - Otherwise, print the number i.
 """
 
-# Implementation: intuition; bro... c'mon... it's fizzbuzz
+# Intuition: bro... c'mon... it's fizzbuzz
 # Time complexity: O(n)
 # Space complexity: O(1)
 def fizzbuzz_v1(n: int) -> int:
@@ -19,7 +19,7 @@ def fizzbuzz_v1(n: int) -> int:
         elif i % 5 == 0: print("buzz")
         else: print(i)
 
-# Implementation: intuition; make booleans into variables
+# Intuition: make booleans into variables
 # Time complexity: O(n)
 # Space complexity: O(1)
 def fizzbuzz_v2(n: int) -> int:
