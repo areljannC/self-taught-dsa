@@ -8,6 +8,7 @@ product(n, term)should return term(1) * ... * term(n).
 """
 
 from operator import mul
+from typing import Callable
 
 square = lambda x: x * x
 identity = lambda x: x
@@ -17,7 +18,7 @@ increment = lambda x: x + 1
 # Implementation: intuition; not sure... this one seems pretty straightforward
 # Time complexity: O(n)
 # Space complexity: O(1)
-def product_v1(n: int, term: int) -> int:
+def product_v1(n: int, term: Callable[[int], int]) -> int:
     product = 1
     for i in range(1, n + 1): product = mul(product, term(i))
     return product
@@ -25,7 +26,7 @@ def product_v1(n: int, term: int) -> int:
 # Implementation: ChatGPT 4o
 # Time complexity: O(n)
 # Space complexity: O(1)
-def product_v2(n: int, term: int) -> int:
+def product_v2(n: int, term: Callable[[int], int]) -> int:
     if n == 0: return 1
     return term(n) * product_v1(n - 1, term)
 
