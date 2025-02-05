@@ -9,12 +9,20 @@ def get_smallest_index(arr: list[int]) -> int | None:
 
 # Time complexity: O(n^2)
 # Space complexity: O(n)
-def selection_sort(arr: list[int]) -> list[int]:
+def selection_sort_v1(arr: list[int]) -> list[int]:
    new_arr = []
    for i in range(len(arr)):
        smallest_index = get_smallest_index(arr)
        new_arr.append(arr.pop(smallest_index))
    return new_arr
+
+# Time complexity: O(n^2)
+# Space complexity: O(1)
+def selection_sort_v2(arr: list[int]) -> list[int]:
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if arr[i] >= arr[j]: arr[i], arr[j] = arr[j], arr[i]
+    return arr
 
 # Test cases by ChatGPT 4o
 try:
@@ -30,24 +38,47 @@ except AssertionError as error:
     print(error.with_traceback())
 
 try:
-    assert selection_sort([3, 1, 4, 1, 5, 9]) == [1, 1, 3, 4, 5, 9], "Expected [1, 1, 3, 4, 5, 9]"
-    assert selection_sort([10, 20, 5, 30, 40]) == [5, 10, 20, 30, 40], "Expected [5, 10, 20, 30, 40]"
-    assert selection_sort([100, 50, 25, 12, 6]) == [6, 12, 25, 50, 100], "Expected [6, 12, 25, 50, 100]"
+    assert selection_sort_v1([3, 1, 4, 1, 5, 9]) == [1, 1, 3, 4, 5, 9], "Expected [1, 1, 3, 4, 5, 9]"
+    assert selection_sort_v1([10, 20, 5, 30, 40]) == [5, 10, 20, 30, 40], "Expected [5, 10, 20, 30, 40]"
+    assert selection_sort_v1([100, 50, 25, 12, 6]) == [6, 12, 25, 50, 100], "Expected [6, 12, 25, 50, 100]"
 
     # ✅ Edge Cases
-    assert selection_sort([]) == [], "Expected [] (empty list case)"
-    assert selection_sort([1]) == [1], "Expected [1] (single element case)"
-    assert selection_sort([5, 5, 5, 5]) == [5, 5, 5, 5], "Expected [5, 5, 5, 5] (all elements same)"
+    assert selection_sort_v1([]) == [], "Expected [] (empty list case)"
+    assert selection_sort_v1([1]) == [1], "Expected [1] (single element case)"
+    assert selection_sort_v1([5, 5, 5, 5]) == [5, 5, 5, 5], "Expected [5, 5, 5, 5] (all elements same)"
 
     # ✅ Special Cases
-    assert selection_sort([-10, -1, -20, 0, 5]) == [-20, -10, -1, 0, 5], "Expected [-20, -10, -1, 0, 5] (negative numbers case)"
-    assert selection_sort([0, 0, 0, 1, 0]) == [0, 0, 0, 0, 1], "Expected [0, 0, 0, 0, 1] (zero-heavy list)"
+    assert selection_sort_v1([-10, -1, -20, 0, 5]) == [-20, -10, -1, 0, 5], "Expected [-20, -10, -1, 0, 5] (negative numbers case)"
+    assert selection_sort_v1([0, 0, 0, 1, 0]) == [0, 0, 0, 0, 1], "Expected [0, 0, 0, 0, 1] (zero-heavy list)"
 
     # ✅ Large Input Test
     large_list = list(range(100, 0, -1))  # [100, 99, ..., 1]
-    assert selection_sort(large_list) == list(range(1, 101)), "Expected sorted list from 1 to 100"
+    assert selection_sort_v1(large_list) == list(range(1, 101)), "Expected sorted list from 1 to 100"
 
-    print("All test cases passed! [selection_sort]")
+    print("All test cases passed! [selection_sort_v1]")
 except AssertionError as error:
-    print("A test case failed. [selection_sort]")
+    print("A test case failed. [selection_sort_v1]")
+    print(error.with_traceback())
+
+try:
+    assert selection_sort_v2([3, 1, 4, 1, 5, 9]) == [1, 1, 3, 4, 5, 9], "Expected [1, 1, 3, 4, 5, 9]"
+    assert selection_sort_v2([10, 20, 5, 30, 40]) == [5, 10, 20, 30, 40], "Expected [5, 10, 20, 30, 40]"
+    assert selection_sort_v2([100, 50, 25, 12, 6]) == [6, 12, 25, 50, 100], "Expected [6, 12, 25, 50, 100]"
+
+    # ✅ Edge Cases
+    assert selection_sort_v2([]) == [], "Expected [] (empty list case)"
+    assert selection_sort_v2([1]) == [1], "Expected [1] (single element case)"
+    assert selection_sort_v2([5, 5, 5, 5]) == [5, 5, 5, 5], "Expected [5, 5, 5, 5] (all elements same)"
+
+    # ✅ Special Cases
+    assert selection_sort_v2([-10, -1, -20, 0, 5]) == [-20, -10, -1, 0, 5], "Expected [-20, -10, -1, 0, 5] (negative numbers case)"
+    assert selection_sort_v2([0, 0, 0, 1, 0]) == [0, 0, 0, 0, 1], "Expected [0, 0, 0, 0, 1] (zero-heavy list)"
+
+    # ✅ Large Input Test
+    large_list = list(range(100, 0, -1))  # [100, 99, ..., 1]
+    assert selection_sort_v2(large_list) == list(range(1, 101)), "Expected sorted list from 1 to 100"
+
+    print("All test cases passed! [selection_sort_v2]")
+except AssertionError as error:
+    print("A test case failed. [selection_sort_v2]")
     print(error.with_traceback())
