@@ -113,14 +113,18 @@ def quick_sort_hoare(arr: list[int]) -> list[int]:
         # use another set of left and right pointers that starts out of bounds
         lp2, rp2 = lp - 1, rp + 1
         while True:
+            # look for a value >= to the pivot
             lp2 += 1
             while arr[lp2] < pivot: lp2 += 1
-
+            
+            # look for a value <= to the pivot
             rp2 -= 1
             while arr[rp2] > pivot: rp2 -= 1
 
+            # return the new pivot index when left and right pointers have crossed
             if lp2 >= rp2: return rp2
 
+            # move the values to their proper sides of the pivot
             arr[lp2], arr[rp2] = arr[rp2], arr[lp2]
 
     quick_sort(arr, 0, len(arr) - 1)
