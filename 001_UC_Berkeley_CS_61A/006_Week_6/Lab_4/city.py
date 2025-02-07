@@ -29,14 +29,15 @@ def get_longitude(city: City) -> float:
     return city.longitude
 
 # Test cases
-try:
-    name, latitude, longitude = "Berkeley", 11.11, 22.22
-    city = make_city(name, latitude, longitude)
-    assert get_name(city) == name, f"Expected {name} but got {get_name(city)}"
-    assert get_latitude(city) == latitude, f"Expected {latitude} but got {get_name(latitude)}"
-    assert get_longitude(city) == longitude, f"Expected {longitude} but got {get_name(longitude)}"
+if __name__ == '__main__':
+    try:
+        name, latitude, longitude = 'Berkeley', 11.11, 22.22
+        city = make_city(name, latitude, longitude)
+        assert get_name(city) == name, f'Expected {name} but got {get_name(city)}'
+        assert get_latitude(city) == latitude, f'Expected {latitude} but got {get_name(latitude)}'
+        assert get_longitude(city) == longitude, f'Expected {longitude} but got {get_name(longitude)}'
 
-    print("All test cases passed!")
-except AssertionError as error:
-    print("A test case failed.")
-    print(error)
+        print('All test cases passed!')
+    except AssertionError as error:
+        print('A test case failed.')
+        print(error)
