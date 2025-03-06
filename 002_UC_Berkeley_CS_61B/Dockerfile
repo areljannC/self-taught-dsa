@@ -5,7 +5,7 @@ FROM --platform=linux/amd64 openjdk:11
 
 # Update package lists and install Maven, nvim, and tmux
 RUN apt-get update
-RUN apt-get install -y maven nvim tmux
+RUN apt-get install -y maven neovim tmux
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set the default working directory inside the container to /workspace
