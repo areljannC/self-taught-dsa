@@ -51,3 +51,33 @@ docs/_build/
 # Other caches and temporary files
 .mypy_cache/
 
+# Compiled class files
+*.class
+
+# Build directories (Maven, Gradle, etc.)
+target/
+build/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE files (IntelliJ IDEA, Eclipse, etc.)
+*.iml
+.idea/
+.eclipse/
+.vscode/
+
