@@ -1,11 +1,11 @@
 # Shoutout to ChatGPT o3-mini for helping me setup this Docker image!
 
 # Use the official OpenJDK 11 image for a Java runtime
-FROM --platform=linux/amd64 openjdk:11
+FROM openjdk:11
 
-# Update package lists and install Maven, nvim, and tmux
+# Update package lists and install Maven
 RUN apt-get update
-RUN apt-get install -y maven neovim tmux
+RUN apt-get install -y maven
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set the default working directory inside the container to /workspace
