@@ -9,8 +9,11 @@ By the end of going through these courses, one should be proficient in tackling 
 # Courses
 
 ## Foundations
-1. [UC Berkeley CS 61A](https://github.com/leejianping/cs61A-Spring2024) ⏳
-2. [UC Berkeley CS 61B](https://fa24.datastructur.es/) 🔒
+1. [UC Berkeley CS 61A](https://github.com/leejianping/cs61A-Spring2024) ✅
+    - only completed weeks 1-8
+    - I think after week 8 is redundant and not really related to DSA
+    - probably worth completing if I didn't get too bored
+2. [UC Berkeley CS 61B](https://fa24.datastructur.es/) ⏳
 
 ## Core Algorithms and Programming
 3. [Robert Sedgewick's Algorithms Part 1](https://www.coursera.org/learn/algorithms-part1) 🔒
