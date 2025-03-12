@@ -14,9 +14,4 @@ public class DrawTriangle {
             System.out.println(new String(line));
         }
     }
-
-    public static void main(String[] args) {
-        drawTriangle(5);
-        drawTriangle(10);
-    }
 }
