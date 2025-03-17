@@ -5,8 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class DrawTriangleTest {
-    
-    @Test
+	@Test
     public void testDrawTriangleWith5Rows() {
         // Capture the standard output
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
