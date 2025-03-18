@@ -4,7 +4,7 @@
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
 
-<artifactId>homework0</artifactId>
+<artifactId>homework0b</artifactId>
 <groupId>org.java-is-so-boilerplate-heavy</groupId>
 <version>1.0.0</version>
 
