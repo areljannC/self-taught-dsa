@@ -1,11 +1,11 @@
 # Shoutout to ChatGPT o3-mini for helping me setup this Docker image!
 
-# Use the official OpenJDK 11 image for a Java runtime
-FROM openjdk:11
+# Use the official OpenJDK 17 image for a Java runtime
+FROM openjdk:17-oracle
 
 # Update package lists and install Maven
-RUN apt-get update
-RUN apt-get install -y maven
+RUN microdnf update
+RUN microdnf install -y maven
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set the default working directory inside the container to /workspace
